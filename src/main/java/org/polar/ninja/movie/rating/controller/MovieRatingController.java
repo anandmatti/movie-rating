@@ -34,12 +34,12 @@ public class MovieRatingController {
 
     @RequestMapping("/movies/{movieId}")
     public UserRating getRatingsForMovie(@PathVariable("movieId") String movieId) {
-        return new UserRating(Arrays.asList(new Rating("user_1", movieId, 5), new Rating("user_2", movieId, 4)));
+        return new UserRating(Arrays.asList(new Rating("1", "user_1", movieId, 5), new Rating("2", "user_2", movieId, 4)));
     }
 
     @RequestMapping("/users/{userId}")
     public UserRating getRatingsForUser(@PathVariable("userId") String userId) {
-        return new UserRating(Arrays.asList(new Rating(userId, "movie_1", 5), new Rating(userId, "movie_2", 4)));
+        return new UserRating(Arrays.asList(new Rating("1", userId, "movie_1", 5), new Rating("2", userId, "movie_2", 4)));
     }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
